@@ -1951,7 +1951,7 @@ Records BEG, END and PRE-CHANGE-LENGTH locally."
     (when lspce-enable-flymake
       (if (not lspce--flymake-already-enabled)
           (flymake-mode -1)
-        (mapc #'delete-overlay (flymake-diagnostics))))
+        (ignore-errors (mapc #'delete-overlay (flymake-diagnostics)))))
     (when (and lspce-enable-eldoc
                (not lspce--eldoc-already-enabled))
       (eldoc-mode -1))
