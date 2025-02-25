@@ -1253,8 +1253,7 @@ matches any of the TRIGGER-CHARACTERS."
        ((or signature content)
         (setq document (concat signature content))))
       (when document
-        (setq backend (propertize "[lspce]\n" 'face 'lspce-eldoc-backend-face))
-        (funcall callback (concat backend document))))))
+        (funcall callback document)))))
 
 ;;; diagnostics
 (put 'lspce-note 'flymake-category 'flymake-note)
